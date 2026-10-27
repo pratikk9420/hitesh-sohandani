@@ -1,0 +1,8 @@
+{
+  "name": "xkinovate",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "xkinovate.com", "custom_domain": true },
+    { "pattern": "www.xkinovate.com", "custom_domain": true }
+  ]
+}
