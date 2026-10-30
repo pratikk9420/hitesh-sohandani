@@ -15,7 +15,7 @@ export type Treatment = {
 };
 
 const commonExpect =
-  "Your appointment begins with a consultation and assessment. Dr. Shreedha Khatavkar will discuss the concern, relevant history, suitable options and realistic expectations. If treatment is appropriate, you will receive guidance on the proposed plan and follow-up.";
+  "Your appointment begins with a consultation and assessment. The clinician will discuss the concern, relevant history, suitable options and realistic expectations. If treatment is appropriate, you will receive guidance on the proposed plan and follow-up.";
 
 const commonResults =
   "Results vary between individuals. Where genuine patient photographs are available and appropriate consent has been obtained, the website may display treatment journeys and follow-up images.";

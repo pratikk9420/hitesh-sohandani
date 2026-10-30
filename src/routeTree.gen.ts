@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BookAppointmentRouteImport } from './routes/book-appointment'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DoctorsRouteImport } from './routes/doctors'
 import { Route as JournalRouteImport } from './routes/journal'
 import { Route as MedicalDisclaimerRouteImport } from './routes/medical-disclaimer'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
@@ -20,7 +21,9 @@ import { Route as ResultsRouteImport } from './routes/results'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TheXFactorRouteImport } from './routes/the-x-factor'
 import { Route as TreatmentsRouteImport } from './routes/treatments'
-import { Route as DoctorDrShreedhaKhatavkarRouteImport } from './routes/doctor.dr-shreedha-khatavkar'
+import { Route as DoctorDrManishaThakurRouteImport } from './routes/doctor.dr-manisha-thakur'
+import { Route as DoctorDrNavneelRaiRouteImport } from './routes/doctor.dr-navneel-rai'
+import { Route as DoctorDrShifaNallamanduRouteImport } from './routes/doctor.dr-shifa-nallamandu'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
 import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
 import { Route as TreatmentsIndexRouteImport } from './routes/treatments.index'
@@ -44,6 +47,11 @@ const BookAppointmentRoute = BookAppointmentRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorsRoute = DoctorsRouteImport.update({
+  id: '/doctors',
+  path: '/doctors',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JournalRoute = JournalRouteImport.update({
@@ -81,12 +89,21 @@ const TreatmentsRoute = TreatmentsRouteImport.update({
   path: '/treatments',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DoctorDrShreedhaKhatavkarRoute =
-  DoctorDrShreedhaKhatavkarRouteImport.update({
-    id: '/doctor/dr-shreedha-khatavkar',
-    path: '/doctor/dr-shreedha-khatavkar',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const DoctorDrManishaThakurRoute = DoctorDrManishaThakurRouteImport.update({
+  id: '/doctor/dr-manisha-thakur',
+  path: '/doctor/dr-manisha-thakur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorDrNavneelRaiRoute = DoctorDrNavneelRaiRouteImport.update({
+  id: '/doctor/dr-navneel-rai',
+  path: '/doctor/dr-navneel-rai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorDrShifaNallamanduRoute = DoctorDrShifaNallamanduRouteImport.update({
+  id: '/doctor/dr-shifa-nallamandu',
+  path: '/doctor/dr-shifa-nallamandu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JournalIndexRoute = JournalIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -113,6 +130,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/book-appointment': typeof BookAppointmentRoute
   '/contact': typeof ContactRoute
+  '/doctors': typeof DoctorsRoute
   '/journal': typeof JournalRouteWithChildren
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -120,7 +138,9 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/the-x-factor': typeof TheXFactorRoute
   '/treatments': typeof TreatmentsRouteWithChildren
-  '/doctor/dr-shreedha-khatavkar': typeof DoctorDrShreedhaKhatavkarRoute
+  '/doctor/dr-manisha-thakur': typeof DoctorDrManishaThakurRoute
+  '/doctor/dr-navneel-rai': typeof DoctorDrNavneelRaiRoute
+  '/doctor/dr-shifa-nallamandu': typeof DoctorDrShifaNallamanduRoute
   '/journal/$slug': typeof JournalSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
   '/journal/': typeof JournalIndexRoute
@@ -131,12 +151,15 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/book-appointment': typeof BookAppointmentRoute
   '/contact': typeof ContactRoute
+  '/doctors': typeof DoctorsRoute
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/results': typeof ResultsRoute
   '/terms': typeof TermsRoute
   '/the-x-factor': typeof TheXFactorRoute
-  '/doctor/dr-shreedha-khatavkar': typeof DoctorDrShreedhaKhatavkarRoute
+  '/doctor/dr-manisha-thakur': typeof DoctorDrManishaThakurRoute
+  '/doctor/dr-navneel-rai': typeof DoctorDrNavneelRaiRoute
+  '/doctor/dr-shifa-nallamandu': typeof DoctorDrShifaNallamanduRoute
   '/journal/$slug': typeof JournalSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
   '/journal': typeof JournalIndexRoute
@@ -148,6 +171,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/book-appointment': typeof BookAppointmentRoute
   '/contact': typeof ContactRoute
+  '/doctors': typeof DoctorsRoute
   '/journal': typeof JournalRouteWithChildren
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -155,7 +179,9 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/the-x-factor': typeof TheXFactorRoute
   '/treatments': typeof TreatmentsRouteWithChildren
-  '/doctor/dr-shreedha-khatavkar': typeof DoctorDrShreedhaKhatavkarRoute
+  '/doctor/dr-manisha-thakur': typeof DoctorDrManishaThakurRoute
+  '/doctor/dr-navneel-rai': typeof DoctorDrNavneelRaiRoute
+  '/doctor/dr-shifa-nallamandu': typeof DoctorDrShifaNallamanduRoute
   '/journal/$slug': typeof JournalSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
   '/journal/': typeof JournalIndexRoute
@@ -168,6 +194,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/book-appointment'
     | '/contact'
+    | '/doctors'
     | '/journal'
     | '/medical-disclaimer'
     | '/privacy-policy'
@@ -175,7 +202,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/the-x-factor'
     | '/treatments'
-    | '/doctor/dr-shreedha-khatavkar'
+    | '/doctor/dr-manisha-thakur'
+    | '/doctor/dr-navneel-rai'
+    | '/doctor/dr-shifa-nallamandu'
     | '/journal/$slug'
     | '/treatments/$slug'
     | '/journal/'
@@ -186,12 +215,15 @@ export interface FileRouteTypes {
     | '/about'
     | '/book-appointment'
     | '/contact'
+    | '/doctors'
     | '/medical-disclaimer'
     | '/privacy-policy'
     | '/results'
     | '/terms'
     | '/the-x-factor'
-    | '/doctor/dr-shreedha-khatavkar'
+    | '/doctor/dr-manisha-thakur'
+    | '/doctor/dr-navneel-rai'
+    | '/doctor/dr-shifa-nallamandu'
     | '/journal/$slug'
     | '/treatments/$slug'
     | '/journal'
@@ -202,6 +234,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/book-appointment'
     | '/contact'
+    | '/doctors'
     | '/journal'
     | '/medical-disclaimer'
     | '/privacy-policy'
@@ -209,7 +242,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/the-x-factor'
     | '/treatments'
-    | '/doctor/dr-shreedha-khatavkar'
+    | '/doctor/dr-manisha-thakur'
+    | '/doctor/dr-navneel-rai'
+    | '/doctor/dr-shifa-nallamandu'
     | '/journal/$slug'
     | '/treatments/$slug'
     | '/journal/'
@@ -221,6 +256,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BookAppointmentRoute: typeof BookAppointmentRoute
   ContactRoute: typeof ContactRoute
+  DoctorsRoute: typeof DoctorsRoute
   JournalRoute: typeof JournalRouteWithChildren
   MedicalDisclaimerRoute: typeof MedicalDisclaimerRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -228,7 +264,9 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   TheXFactorRoute: typeof TheXFactorRoute
   TreatmentsRoute: typeof TreatmentsRouteWithChildren
-  DoctorDrShreedhaKhatavkarRoute: typeof DoctorDrShreedhaKhatavkarRoute
+  DoctorDrManishaThakurRoute: typeof DoctorDrManishaThakurRoute
+  DoctorDrNavneelRaiRoute: typeof DoctorDrNavneelRaiRoute
+  DoctorDrShifaNallamanduRoute: typeof DoctorDrShifaNallamanduRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -259,6 +297,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctors': {
+      id: '/doctors'
+      path: '/doctors'
+      fullPath: '/doctors'
+      preLoaderRoute: typeof DoctorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/journal': {
@@ -310,11 +355,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TreatmentsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/doctor/dr-shreedha-khatavkar': {
-      id: '/doctor/dr-shreedha-khatavkar'
-      path: '/doctor/dr-shreedha-khatavkar'
-      fullPath: '/doctor/dr-shreedha-khatavkar'
-      preLoaderRoute: typeof DoctorDrShreedhaKhatavkarRouteImport
+    '/doctor/dr-manisha-thakur': {
+      id: '/doctor/dr-manisha-thakur'
+      path: '/doctor/dr-manisha-thakur'
+      fullPath: '/doctor/dr-manisha-thakur'
+      preLoaderRoute: typeof DoctorDrManishaThakurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctor/dr-navneel-rai': {
+      id: '/doctor/dr-navneel-rai'
+      path: '/doctor/dr-navneel-rai'
+      fullPath: '/doctor/dr-navneel-rai'
+      preLoaderRoute: typeof DoctorDrNavneelRaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctor/dr-shifa-nallamandu': {
+      id: '/doctor/dr-shifa-nallamandu'
+      path: '/doctor/dr-shifa-nallamandu'
+      fullPath: '/doctor/dr-shifa-nallamandu'
+      preLoaderRoute: typeof DoctorDrShifaNallamanduRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/journal/': {
@@ -380,6 +439,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BookAppointmentRoute: BookAppointmentRoute,
   ContactRoute: ContactRoute,
+  DoctorsRoute: DoctorsRoute,
   JournalRoute: JournalRouteWithChildren,
   MedicalDisclaimerRoute: MedicalDisclaimerRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
@@ -387,7 +447,9 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   TheXFactorRoute: TheXFactorRoute,
   TreatmentsRoute: TreatmentsRouteWithChildren,
-  DoctorDrShreedhaKhatavkarRoute: DoctorDrShreedhaKhatavkarRoute,
+  DoctorDrManishaThakurRoute: DoctorDrManishaThakurRoute,
+  DoctorDrNavneelRaiRoute: DoctorDrNavneelRaiRoute,
+  DoctorDrShifaNallamanduRoute: DoctorDrShifaNallamanduRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -39,7 +39,7 @@ export const articles: Article[] = [
         "heading": "A practical approach",
         "paragraphs": [
           "Keep skincare simple and consistent. Use products appropriate for acne-prone skin, avoid picking or squeezing lesions, and protect the skin from excessive sun exposure. Most importantly, avoid changing multiple treatments at once without guidance, because irritation can make it harder to understand what is helping.",
-          "Xkinovate approaches acne as a dermatological condition rather than a cosmetic problem alone. A consultation with Dr. Shreedha Khatavkar can help identify the type of acne and discuss appropriate treatment options.",
+          "Xkinovate approaches acne as a dermatological condition rather than a cosmetic problem alone. A consultation at the clinic can help identify the type of acne and discuss appropriate treatment options.",
           "Medical information on this page is educational and does not replace an individual examination or diagnosis."
         ]
       }

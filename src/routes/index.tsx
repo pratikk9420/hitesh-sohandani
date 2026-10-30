@@ -5,6 +5,7 @@ import { images } from "@/lib/images";
 import { articles } from "@/lib/articles";
 import { treatments } from "@/lib/treatments";
 import { pageHead } from "@/lib/seo";
+import { teamDoctors } from "@/lib/doctors";
 import { site, whatsappLink } from "@/lib/site";
 import editorialHero from "@/assets/editorial-hero-woman.jpg";
 import editorialSkin from "@/assets/editorial-skin-woman.jpg";
@@ -13,8 +14,8 @@ import editorialSculptural from "@/assets/editorial-sculptural-woman.jpg";
 import editorialJawline from "@/assets/editorial-jawline-woman.jpg";
 import editorialMature from "@/assets/editorial-mature-woman.jpg";
 
-const title="Dermatologist & Aesthetic Clinic in Juhu, Mumbai | Xkinovate";
-const description="Xkinovate offers dermatologist-led skin, hair and aesthetic care in Juhu, Mumbai, with personalised treatment plans and evidence-based clinical care.";
+const title="Aesthetic Clinic in Juhu, Mumbai | Xkinovate";
+const description="Xkinovate offers skin, hair and aesthetic care in Juhu, Mumbai, with personalised treatment plans and evidence-based clinical care.";
 const treatmentImages=[editorialSkin,editorialSculptural,editorialProfile,editorialJawline,editorialMature,editorialHero];
 const journalImages=[editorialMature,editorialJawline,editorialSculptural];
 
@@ -50,8 +51,18 @@ function Home(){return <>
     <div className="flex items-center px-6 py-16 md:px-16"><div className="max-w-xl"><p className="eyebrow">The Xkinovate X Factor</p><h2 className="mt-5 text-5xl md:text-6xl">More Than Treatments.<br/><em>A Thoughtful Approach.</em></h2><p className="mt-7 text-lg leading-8 text-muted-foreground">Good aesthetic care is not about changing everyone in the same way. It is about understanding the skin, identifying the concern, discussing realistic options and choosing an appropriate treatment plan.</p><Link to="/the-x-factor" className="mt-8 inline-flex items-center gap-2 border-b border-foreground pb-2 text-xs uppercase tracking-[0.16em]">Discover the X Factor <ArrowRight className="size-4"/></Link></div></div>
   </section>
 
-  <Section eyebrow="Meet the doctor" title="Dr. Shreedha Khatavkar">
-    <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:items-center"><div className="relative"><div className="absolute -left-4 -top-4 size-full border border-bronze/40"/><img src={images.doctor} alt="Dr. Shreedha Khatavkar" width={800} height={1000} loading="lazy" className="relative aspect-[4/5] w-full object-cover shadow-lift"/></div><div><p className="text-xs uppercase tracking-[0.18em] text-bronze">{site.doctorQualification}</p><p className="mt-7 text-lg leading-8 text-muted-foreground">Dr. Shreedha Khatavkar is a dermatologist trained at leading tertiary-care institutions in Mumbai. Her clinical work spans dermatology, dermatosurgery and basic aesthetic dermatology, with an evidence-based, patient-centred approach.</p><div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-4 text-xs uppercase tracking-[0.12em]"><span>Clinical Dermatology</span><span>Dermatosurgery</span><span>Aesthetic Dermatology</span><span>Skin &amp; Hair Care</span></div><Link to="/doctor/dr-shreedha-khatavkar" className="mt-9 inline-flex items-center gap-2 bg-ink px-8 py-4 text-xs uppercase tracking-[0.16em] text-ink-foreground">Meet Dr. Shreedha <ArrowRight className="size-4"/></Link></div></div>
+  <Section eyebrow="Meet the doctors" title="The Xkinovate clinical team" tone="muted">
+    <div className="grid gap-8 md:grid-cols-3">
+      {teamDoctors.map((doctor) => (
+        <Link key={doctor.slug} to={doctor.slug} className="group block">
+          <img src={doctor.image} alt={doctor.name} width={800} height={1000} loading="lazy" className="aspect-[4/5] w-full object-cover object-top" />
+          <p className="mt-5 text-xs uppercase tracking-[0.16em] text-bronze">{doctor.role}</p>
+          <h3 className="mt-2 text-3xl">{doctor.name}</h3>
+          <p className="mt-3 leading-7 text-muted-foreground">{doctor.cardBlurb}</p>
+        </Link>
+      ))}
+    </div>
+    <Link to="/doctors" className="mt-10 inline-flex items-center gap-2 border-b border-foreground pb-2 text-xs uppercase tracking-[0.16em]">Meet the doctors <ArrowRight className="size-4" /></Link>
   </Section>
 
   <section className="grid bg-ink text-ink-foreground md:grid-cols-2"><img src={images.space} alt="Abstract architectural detail representing the calm Xkinovate clinic environment" width={1200} height={900} loading="lazy" className="min-h-[400px] size-full object-cover opacity-80"/><div className="flex items-center px-6 py-16 md:px-16"><div><p className="eyebrow text-bronze">Our clinic</p><h2 className="mt-5 text-5xl">A Space Designed Around You</h2><p className="mt-7 max-w-xl text-lg leading-8 text-ink-foreground/70">Xkinovate Aesthetic Clinic is on the first floor of Juhu Supreme Shopping Centre, Gulmohar Road 9, JVPD, Juhu. The clinic is designed to provide a calm, professional environment for dermatology and aesthetic consultations.</p><Link to="/contact" className="mt-8 inline-flex items-center gap-2 border-b border-bronze pb-2 text-xs uppercase tracking-[0.16em] text-bronze">Visit Xkinovate <ArrowRight className="size-4"/></Link></div></div></section>

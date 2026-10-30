@@ -8,9 +8,6 @@ export const site = {
   tagline: "AESTHETICS · SKIN · YOU",
   positioning: "Dermatology & Aesthetics",
   url: "https://www.xkinovate.com",
-  doctor: "Dr. Shreedha Khatavkar",
-  doctorFullName: "Dr. Shreedha Anandrao Khatavkar",
-  doctorQualification: "MBBS, MD Dermatology, Venereology & Leprosy",
   address: {
     line1: "25-C, Juhu Supreme Shopping Centre, First Floor",
     line2: "Above Tewari Brothers, Gulmohar Road 9, Near Bar Stock Exchange, Near Reliance Digital",
@@ -34,7 +31,7 @@ export const site = {
 export function whatsappLink(message?: string): string {
   const text =
     message ??
-    "Hi Xkinovate, I would like to book a consultation with Dr. Shreedha Khatavkar.";
+    "Hi Xkinovate, I would like to book a consultation.";
   return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(text)}`;
 }
 
@@ -49,7 +46,7 @@ export const mainNav = [
   { label: "About", to: "/about" },
   { label: "Treatments", to: "/treatments" },
   { label: "The X Factor", to: "/the-x-factor" },
-  { label: "Dr. Shreedha", to: "/doctor/dr-shreedha-khatavkar" },
+  { label: "Doctors", to: "/doctors" },
   { label: "Results", to: "/results" },
   { label: "Journal", to: "/journal" },
   { label: "Contact", to: "/contact" },
