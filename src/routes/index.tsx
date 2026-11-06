@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { ClinicShort } from "@/components/site/ClinicShort";
 import { CTA, Section } from "@/components/site/PageElements";
-import { images } from "@/lib/images";
 import { articles } from "@/lib/articles";
 import { treatments } from "@/lib/treatments";
 import { pageHead } from "@/lib/seo";
@@ -65,7 +65,19 @@ function Home(){return <>
     <Link to="/doctors" className="mt-10 inline-flex items-center gap-2 border-b border-foreground pb-2 text-xs uppercase tracking-[0.16em]">Meet the doctors <ArrowRight className="size-4" /></Link>
   </Section>
 
-  <section className="grid bg-ink text-ink-foreground md:grid-cols-2"><img src={images.space} alt="Abstract architectural detail representing the calm Xkinovate clinic environment" width={1200} height={900} loading="lazy" className="min-h-[400px] size-full object-cover opacity-80"/><div className="flex items-center px-6 py-16 md:px-16"><div><p className="eyebrow text-bronze">Our clinic</p><h2 className="mt-5 text-5xl">A Space Designed Around You</h2><p className="mt-7 max-w-xl text-lg leading-8 text-ink-foreground/70">Xkinovate Aesthetic Clinic is on the first floor of Juhu Supreme Shopping Centre, Gulmohar Road 9, JVPD, Juhu. The clinic is designed to provide a calm, professional environment for dermatology and aesthetic consultations.</p><Link to="/contact" className="mt-8 inline-flex items-center gap-2 border-b border-bronze pb-2 text-xs uppercase tracking-[0.16em] text-bronze">Visit Xkinovate <ArrowRight className="size-4"/></Link></div></div></section>
+  <section className="grid bg-ink text-ink-foreground md:grid-cols-2">
+    <div className="flex items-center justify-center px-6 py-12 md:py-16">
+      <ClinicShort />
+    </div>
+    <div className="flex items-center px-6 py-16 md:px-16">
+      <div>
+        <p className="eyebrow text-bronze">Our clinic</p>
+        <h2 className="mt-5 text-5xl">A Space Designed Around You</h2>
+        <p className="mt-7 max-w-xl text-lg leading-8 text-ink-foreground/70">Xkinovate Aesthetic Clinic is on the first floor of Juhu Supreme Shopping Centre, Gulmohar Road 9, JVPD, Juhu. The clinic is designed to provide a calm, professional environment for dermatology and aesthetic consultations.</p>
+        <Link to="/contact" className="mt-8 inline-flex items-center gap-2 border-b border-bronze pb-2 text-xs uppercase tracking-[0.16em] text-bronze">Visit Xkinovate <ArrowRight className="size-4"/></Link>
+      </div>
+    </div>
+  </section>
 
   <Section eyebrow="From the Xkinovate journal" title="Practical Insights for Healthier Skin & Hair" tone="muted"><div className="grid gap-px bg-border md:grid-cols-3">{articles.slice(0,3).map((a,i)=><Link key={a.slug} to="/journal/$slug" params={{slug:a.slug}} className="group bg-background"><img src={journalImages[i]} alt="Decorative beauty editorial portrait" width={1200} height={1504} loading="lazy" className="aspect-[16/10] w-full object-cover transition-opacity group-hover:opacity-85"/><div className="p-7"><h3 className="text-2xl leading-tight">{a.title}</h3><p className="mt-4 line-clamp-3 leading-7 text-muted-foreground">{a.excerpt}</p></div></Link>)}</div><Link to="/journal" className="mt-9 inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em]">Read the journal <ArrowRight className="size-4"/></Link></Section>
   <CTA/>
